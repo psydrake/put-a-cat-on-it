@@ -49,7 +49,7 @@
     <application android:icon="@drawable/icon" android:label="@string/app_name"
         android:hardwareAccelerated="true"
         android:debuggable="true">
-        <activity android:name="put-a-cat-on-it" android:label="@string/app_name"
+        <activity android:name="PutACatOnIt" android:label="@string/app_name"
                 android:theme="@android:style/Theme.Black.NoTitleBar"
                 android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale">
             <intent-filter>

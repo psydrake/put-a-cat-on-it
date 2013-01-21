@@ -23,7 +23,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import org.apache.cordova.*;
 
-public class put-a-cat-on-it extends DroidGap
+public class PutACatOnIt extends DroidGap
 {
     @Override
     public void onCreate(Bundle savedInstanceState)
