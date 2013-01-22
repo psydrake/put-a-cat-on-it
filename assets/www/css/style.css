@@ -1,0 +1,14 @@
+div {
+    position:relative;   
+}
+
+#main {   
+    width: 90%;
+}
+
+#overlay {
+	position: absolute;
+	width: 33%;
+	top: 0;
+	left: 0; 
+}
