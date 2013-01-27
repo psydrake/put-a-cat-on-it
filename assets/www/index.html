@@ -42,13 +42,15 @@
 	    		</div>
 	    		<!--<button onclick="callNativePlugin('success');">Click to invoke the Native Plugin with an SUCCESS!</button>
 	    		<button onclick="callNativePlugin('error');">Click to invoke the Native Plugin with an ERROR!</button>-->
-				<button onclick="callScreenshotPlugin();">Screenshot!</button> 
+				<button onclick="callScreenshotPlugin();">Screenshot!</button>
+ 				<button onclick="callSharePlugin();">Share!</button> 				 
 	    	</div>
         </div>
 		<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>        
         <script type="text/javascript" src="js/jquery.mobile-1.2.0.min.js"></script>                
         <script type="text/javascript" src="js/cordova-2.2.0.js"></script>
         <script type="text/javascript" charset="utf-8" src="js/Screenshot.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/share.js"></script>        
         <script type="text/javascript" src="js/putacatonit.js"></script>
         <script type="text/javascript">
 			$(document).ready(function() {
@@ -64,6 +66,16 @@
         		Screenshot.saveScreenshot(nativePluginResultHandler, nativePluginErrorHandler);
 			}
 	
+        	function callSharePlugin() {
+        		//Share.show('Hello World', nativePluginResultHandler, nativePluginErrorHandler);
+        		window.plugins.share.show({
+        		    subject: 'I like turtles',
+        		    text: 'http://www.mndaily.com'},
+        		    function() {}, // Success function
+        		    function() {alert('Share failed')} // Failure function
+        		);
+			}
+
 			function nativePluginResultHandler(result) {
 		       	alert("SUCCESS: \r\n"+result ); 
 			}

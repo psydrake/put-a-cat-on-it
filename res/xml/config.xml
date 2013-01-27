@@ -52,7 +52,7 @@
     <plugin name="Echo" value="org.apache.cordova.Echo" />
     <plugin name="Globalization" value="org.apache.cordova.Globalization"/>
     <plugin name="Screenshot" value="org.apache.cordova.Screenshot"/>
-    <plugin name="net.edrake.putacatonit.HelloPlugin" value="net.edrake.putacatonit.HelloPlugin"/>
+    <plugin name="Share" value="com.schaul.plugins.share.Share"/>
 </plugins>
 </cordova>
 
