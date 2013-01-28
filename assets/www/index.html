@@ -34,6 +34,7 @@
 	        <div data-role="content">
 			    <img id="main" src="img/photos/julia_gangsta.jpg" />
 	    		<img id="overlay" src="img/cats/trixie_looking_at_you.png" class="draggable" style="display:none"/>
+	    		
 	    		<div class="hideOnScreenshot">
 		    		<div id="put">
 		    			<a href="javascript:putCat();" data-role="button" data-icon="plus">Put A Cat On It</a>
@@ -41,7 +42,8 @@
 		    		<div id="remove" style="display:none">
 		    			<a href="javascript:removeCat();" data-role="button" data-icon="minus">Remove A Cat From It</a>
 		    		</div>
-					<button onclick="callScreenshotPlugin();">Screenshot!</button>
+					<button onclick="callScreenshotPlugin();">Save</button>
+					<button onclick="takePicture();">Camera</button>
 				</div>
 	    	</div>
         </div>
@@ -57,8 +59,8 @@
         <script type="text/javascript">
 			$(document).ready(function() {
 				document.addEventListener("deviceready", app.onDeviceReady, false);
-				$(".draggable").draggable();				
-			});
+				$(".draggable").draggable();
+			});			
         </script>
     </body>
 </html>

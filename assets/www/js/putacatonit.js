@@ -10,6 +10,30 @@ function removeCat() {
 	$("#put").show();
 }
 
+// Camera functions
+function takePicture() {
+	navigator.camera.getPicture(onCameraSuccess, onCameraFail, {
+			quality: 60,
+	        sourceType: navigator.camera.PictureSourceType.CAMERA,
+	        mediaType: navigator.camera.MediaType.PICTURE,			
+			destinationType: Camera.DestinationType.FILE_URI,
+			targetWidth: 1024,
+			targetHeight: 768,
+			correctOrientation: true
+		}
+	); 
+}
+
+function onCameraSuccess(imageURI) {
+    var image = document.getElementById('main');
+    image.src = imageURI;
+}
+
+function onCameraFail(message) {
+    alert('Failed because: ' + message);
+}
+
+// Screenshot native plugin call
 function callScreenshotPlugin() {
 	$('.hideOnScreenshot').hide(); // remove on-screen widgets for clean screenshot
 	setTimeout(function() { // timeout to give hide() time to complete
@@ -17,6 +41,7 @@ function callScreenshotPlugin() {
 	}, 1000);
 }
 
+// Share native plugin call
 function callSharePlugin(fileName) {
 	window.plugins.share.show({
 	    subject: 'Put A Cat On It',
