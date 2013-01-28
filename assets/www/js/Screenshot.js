@@ -8,8 +8,11 @@
  */
 var Screenshot = {
 	saveScreenshot: function(success, fail) {
-		//execute(String action, JSONArray args, String callbackId)		
-		return cordova.exec(success, fail, 'Screenshot', 'saveScreenshot', []);
+		var ts = Math.round((new Date()).getTime());
+		var fileName = "putacatonit_" + ts + ".png"
+		var retVal = cordova.exec(success, fail, 'Screenshot', 'saveScreenshot', [fileName]);
+		//alert('retVal: ' + retVal);
+		return retVal;
 	}
 }
 /*

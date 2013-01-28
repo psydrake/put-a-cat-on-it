@@ -43,7 +43,7 @@
 	    		<!--<button onclick="callNativePlugin('success');">Click to invoke the Native Plugin with an SUCCESS!</button>
 	    		<button onclick="callNativePlugin('error');">Click to invoke the Native Plugin with an ERROR!</button>-->
 				<button onclick="callScreenshotPlugin();">Screenshot!</button>
- 				<button onclick="callSharePlugin();">Share!</button> 				 
+ 				<!--<button onclick="callSharePlugin();">Share!</button>--> 				 
 	    	</div>
         </div>
 		<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>        
@@ -63,25 +63,25 @@
         	
         	function callScreenshotPlugin() {
         		//cordova.exec("Screenshot.saveScreenshot");
-        		Screenshot.saveScreenshot(nativePluginResultHandler, nativePluginErrorHandler);
+        		Screenshot.saveScreenshot(screenshotResultHandler, nativePluginErrorHandler);
 			}
 	
-        	function callSharePlugin() {
-        		//Share.show('Hello World', nativePluginResultHandler, nativePluginErrorHandler);
+        	function callSharePlugin(fileName) {
         		window.plugins.share.show({
-        		    subject: 'I like turtles',
-        		    text: 'http://www.mndaily.com'},
+        		    subject: 'Put A Cat On It!',
+        		    fileName: fileName},
         		    function() {}, // Success function
         		    function() {alert('Share failed')} // Failure function
         		);
 			}
 
-			function nativePluginResultHandler(result) {
-		       	alert("SUCCESS: \r\n"+result ); 
+			function screenshotResultHandler(fileName) {
+		       	alert("SUCCESS: \r\n" + fileName);
+		       	callSharePlugin(fileName);
 			}
 	
 			function nativePluginErrorHandler (error) {
-	       		alert("ERROR: \r\n"+error ); 
+				alert("ERROR: \r\n" + error); 
 			} 
         </script>
     </body>
