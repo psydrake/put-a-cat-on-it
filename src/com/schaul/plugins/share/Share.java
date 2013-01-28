@@ -32,11 +32,10 @@ public class Share extends Plugin {
 		}
 	}
 	
-	private void doSendIntent(String subject, String fileName, String callbackId) {
+	private void doSendIntent(String subject, String filePath, String callbackId) {
 		Intent sendIntent = new Intent(android.content.Intent.ACTION_SEND);
 		sendIntent.setType("image/png");
-		String filePath = "file:///sdcard/Pictures/" + fileName;
-		Log.i(TAG, "SENDINTENT.PUTEXTRA " + filePath);
+		Log.d(TAG, "doSendIntent. filePath: " + filePath);
 
 		sendIntent.putExtra(Intent.EXTRA_STREAM, Uri.parse(filePath));
 		sendIntent.putExtra(Intent.EXTRA_SUBJECT, subject);

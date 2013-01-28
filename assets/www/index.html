@@ -28,61 +28,34 @@
     </head>
     <body>
         <div data-role="page" id="home" data-theme="b">
-        	<div data-role="header">
+        	<div data-role="header" class="hideOnScreenshot">
 		    	<h1>Put A Cat On It</h1>
 	        </div>
 	        <div data-role="content">
 			    <img id="main" src="img/photos/julia_gangsta.jpg" />
 	    		<img id="overlay" src="img/cats/trixie_looking_at_you.png" style="display:none"/>
-	    		<div id="put">
-	    			<a href="javascript:putCat();" data-role="button" data-icon="plus">Put A Cat On It</a>
-	    		</div>
-	    		<div id="remove" style="display:none">
-	    			<a href="javascript:removeCat();" data-role="button" data-icon="minus">Remove A Cat From It</a>
-	    		</div>
-	    		<!--<button onclick="callNativePlugin('success');">Click to invoke the Native Plugin with an SUCCESS!</button>
-	    		<button onclick="callNativePlugin('error');">Click to invoke the Native Plugin with an ERROR!</button>-->
-				<button onclick="callScreenshotPlugin();">Screenshot!</button>
- 				<!--<button onclick="callSharePlugin();">Share!</button>--> 				 
+	    		<div class="hideOnScreenshot">
+		    		<div id="put">
+		    			<a href="javascript:putCat();" data-role="button" data-icon="plus">Put A Cat On It</a>
+		    		</div>
+		    		<div id="remove" style="display:none">
+		    			<a href="javascript:removeCat();" data-role="button" data-icon="minus">Remove A Cat From It</a>
+		    		</div>
+					<button onclick="callScreenshotPlugin();">Screenshot!</button>
+				</div>
 	    	</div>
         </div>
 		<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>        
         <script type="text/javascript" src="js/jquery.mobile-1.2.0.min.js"></script>                
         <script type="text/javascript" src="js/cordova-2.2.0.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" charset="utf-8" src="js/Screenshot.js"></script>
         <script type="text/javascript" charset="utf-8" src="js/share.js"></script>        
         <script type="text/javascript" src="js/putacatonit.js"></script>
         <script type="text/javascript">
 			$(document).ready(function() {
-				document.addEventListener("deviceready", onDeviceReady, false);
+				document.addEventListener("deviceready", app.onDeviceReady, false);
 			});
-
-			function onDeviceReady() {  
-				//navigator.notification.alert("Cordova is working")
-			}
-        	
-        	function callScreenshotPlugin() {
-        		//cordova.exec("Screenshot.saveScreenshot");
-        		Screenshot.saveScreenshot(screenshotResultHandler, nativePluginErrorHandler);
-			}
-	
-        	function callSharePlugin(fileName) {
-        		window.plugins.share.show({
-        		    subject: 'Put A Cat On It',
-        		    fileName: fileName},
-        		    function() {}, // Success function
-        		    function() {alert('Share failed')} // Failure function
-        		);
-			}
-
-			function screenshotResultHandler(fileName) {
-		       	alert("SUCCESS: \r\n" + fileName);
-		       	callSharePlugin(fileName);
-			}
-	
-			function nativePluginErrorHandler (error) {
-				alert("ERROR: \r\n" + error); 
-			} 
         </script>
     </body>
 </html>

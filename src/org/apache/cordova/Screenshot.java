@@ -28,7 +28,7 @@ public class Screenshot extends Plugin {
 	public PluginResult execute(String action, JSONArray args, String callbackId) {
 		try {
 			fileName = args.getString(0);
-			//Log.i(TAG, "fileName: " + fileName);
+			Log.d(TAG, "execute(). fileName: " + fileName);
 		}
 		catch (Exception e) {
 			 Log.e("Screenshot error", e.toString());
@@ -56,7 +56,8 @@ public class Screenshot extends Plugin {
 					FileOutputStream fos = new FileOutputStream(f);
 					bitmap.compress(Bitmap.CompressFormat.PNG, 100, fos);
 
-					that.success(new PluginResult(PluginResult.Status.OK, fileName), id);
+					// Return new file's absolute path, so success callback can pass it to the Share plugin
+					that.success(new PluginResult(PluginResult.Status.OK, f.getAbsolutePath()), id);
 				} 
 				catch (IOException e) {
 					that.success(new PluginResult(PluginResult.Status.IO_EXCEPTION, e.getMessage()), id);
