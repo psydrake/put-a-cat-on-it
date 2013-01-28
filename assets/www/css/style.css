@@ -1,3 +1,7 @@
+body {
+	background-color: #D8E0CE;
+}
+
 div {
     position:relative;   
 }
@@ -11,4 +15,17 @@ div {
 	width: 33%;
 	top: 0;
 	left: 0; 
+}
+
+#catAppearButtons {
+	float: left;
+	padding: 8px;
+}
+
+#catControlButtons {
+	padding: 8px;
+}
+
+#cameraButton {
+	padding: 8px;
 }

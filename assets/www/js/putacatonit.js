@@ -13,7 +13,7 @@ function removeCat() {
 // Camera functions
 function takePicture() {
 	navigator.camera.getPicture(onCameraSuccess, onCameraFail, {
-			quality: 60,
+			quality: 80,
 	        sourceType: navigator.camera.PictureSourceType.CAMERA,
 	        mediaType: navigator.camera.MediaType.PICTURE,			
 			destinationType: Camera.DestinationType.FILE_URI,

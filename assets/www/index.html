@@ -27,7 +27,7 @@
         <title>Put A Cat On It</title>
     </head>
     <body>
-        <div data-role="page" id="home" data-theme="b">
+        <div data-role="page" id="home" data-theme="c">
         	<div data-role="header" class="hideOnScreenshot">
 		    	<h1>Put A Cat On It</h1>
 	        </div>
@@ -36,14 +36,19 @@
 	    		<img id="overlay" src="img/cats/trixie_looking_at_you.png" class="draggable" style="display:none"/>
 	    		
 	    		<div class="hideOnScreenshot">
-		    		<div id="put">
-		    			<a href="javascript:putCat();" data-role="button" data-icon="plus">Put A Cat On It</a>
-		    		</div>
-		    		<div id="remove" style="display:none">
-		    			<a href="javascript:removeCat();" data-role="button" data-icon="minus">Remove A Cat From It</a>
-		    		</div>
-					<button onclick="callScreenshotPlugin();">Save</button>
-					<button onclick="takePicture();">Camera</button>
+	    			<span id="catAppearButtons">
+	    				<a href="javascript:putCat();" id="put" data-role="button" data-icon="plus">Put A Cat On It</a>
+			    		<a href="javascript:removeCat();" id="remove" data-role="button" data-icon="minus" style="display:none">Remove A Cat From It</a>
+		    		</span>
+		    		<span data-role="controlgroup" data-type="horizontal" id="catControlButtons">
+						<a href="javascript:void(0);" data-role="button">Rotate</a>			    		
+						<a href="javascript:void(0);" data-role="button">Bigger</a>			    		
+						<a href="javascript:void(0);" data-role="button">Smaller</a>			    		
+						<a href="javascript:callScreenshotPlugin();" data-role="button">Save</a>
+					</span>
+					<div id="cameraButton">
+						<button onclick="takePicture();">Camera</button>
+					</div>						
 				</div>
 	    	</div>
         </div>
