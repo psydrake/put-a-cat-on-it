@@ -10,7 +10,6 @@ function removeCat() {
 	$("#put").show();
 }
 
-
 function callScreenshotPlugin() {
 	$('.hideOnScreenshot').hide(); // remove on-screen widgets for clean screenshot
 	setTimeout(function() { // timeout to give hide() time to complete
