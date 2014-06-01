@@ -9,8 +9,8 @@ NOTE: This app is still very much under development.
 
 Instructions
 ------------
-1. Select a photograph
+1. Select a photograph.
 
 2. Click the cat button to put a cat on it.
 
-3. Repeat as necessary	
+3. Repeat as necessary.
