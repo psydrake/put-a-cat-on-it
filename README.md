@@ -1,5 +1,5 @@
 Put A Cat On It
-==================
+===============
 
 This is an Android mobile app that will allow you to add pictures of cats to
 the photos stored on your device.
